@@ -1,0 +1,67 @@
+:root {
+  --ink: #13262b; --teal: #1f6f6b; --mint: #e8f3f0; --cream: #fffdf8; --sand: #f4f0e8;
+  --line: #e2dccf; --muted: #4a5a5e; --orange: #e3793a; --rust: #b4531f; --scan: #8fd0c4; --viewfinder: #1c353b;
+}
+body { margin: 0; font-family: 'DM Sans', system-ui, sans-serif; background: var(--sand); color: var(--ink); }
+p, h1, ul { margin: 0; }
+
+/* Phone frame: 420x824 screen + 18px bezel (456x860 outside), same as the design. */
+.phone { width: 420px; height: 824px; padding: 18px; background: var(--ink); border-radius: 64px; display: flex; }
+.screen { flex: 1; min-width: 0; padding: 48px 32px 40px; background: var(--cream); border-radius: 48px; display: flex; flex-direction: column; gap: 24px; overflow: hidden; }
+
+.brand { font-size: 24px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); }
+.title { font-size: 32px; font-weight: 600; line-height: 1.2; }
+.body { font-size: 26px; line-height: 1.35; }
+.muted { font-size: 24px; line-height: 1.3; color: var(--muted); }
+.muted-text { font-size: 24px; color: var(--muted); }
+.eyebrow { font-size: 24px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.rust { color: var(--rust); }
+.center { text-align: center; }
+.spacer { flex: 1; }
+
+.bubble { background: var(--mint); border-radius: 24px 24px 24px 6px; padding: 24px; }
+.wave { display: flex; align-items: center; justify-content: center; gap: 8px; height: 80px; }
+.wave span { width: 8px; background: var(--teal); border-radius: 4px; }
+
+.viewfinder { position: relative; height: 300px; background: var(--viewfinder); border-radius: 24px; display: flex; align-items: center; justify-content: center; }
+.label { width: 220px; display: flex; flex-direction: column; gap: 8px; background: var(--sand); border-radius: 8px; padding: 20px; font: 24px 'Courier New', monospace; color: var(--ink); }
+.corner { position: absolute; width: 48px; height: 48px; border: 0 solid var(--scan); }
+.tl { left: 24px; top: 24px; border-top-width: 4px; border-left-width: 4px; }
+.tr { right: 24px; top: 24px; border-top-width: 4px; border-right-width: 4px; }
+.bl { left: 24px; bottom: 24px; border-bottom-width: 4px; border-left-width: 4px; }
+.br { right: 24px; bottom: 24px; border-bottom-width: 4px; border-right-width: 4px; }
+.table { border: 1px solid var(--line); border-radius: 16px; }
+.row { display: flex; justify-content: space-between; padding: 16px 20px; font-size: 24px; }
+.row + .row { border-top: 1px solid var(--line); }
+
+.card { display: flex; flex-direction: column; gap: 8px; border: 1px solid var(--line); border-radius: 20px; padding: 20px 24px; }
+.card.active { border: 2px solid var(--teal); }
+.card-title { font-size: 28px; font-weight: 600; }
+.option-title { font-size: 26px; font-weight: 700; }
+.confirmed { font-size: 24px; font-weight: 700; color: var(--teal); }
+
+.banner { display: flex; flex-direction: column; gap: 12px; border-radius: 24px; padding: 28px; }
+.banner.warn { background: var(--orange); color: var(--ink); }
+.banner.done { background: var(--teal); color: var(--cream); }
+.banner-text { font-size: 28px; font-weight: 700; line-height: 1.25; }
+.banner-text.big { font-size: 30px; line-height: 1.2; }
+.selected { font-size: 24px; color: var(--mint); }
+.cta { font: 700 28px 'DM Sans', sans-serif; color: var(--cream); background: var(--teal); border: 0; border-radius: 999px; padding: 20px; }
+.checklist { list-style: none; padding: 0; border: 1px solid var(--line); border-radius: 20px; }
+.checklist li { font-size: 24px; padding: 16px 24px; }
+.checklist li + li { border-top: 1px solid var(--line); }
+
+/* Gallery page (not part of the app UI) */
+.gallery { max-width: 1500px; margin: 0 auto; padding: 48px 32px 80px; }
+.gallery header { margin-bottom: 40px; }
+.gallery header h1 { font-size: 36px; margin-bottom: 8px; }
+.gallery header p { color: var(--muted); margin-bottom: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(456px, 1fr)); gap: 56px 32px; justify-items: center; }
+figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.shadow { box-shadow: 0 40px 80px rgba(19, 38, 43, 0.25); border-radius: 64px; }
+figcaption { display: flex; flex-direction: column; align-items: center; gap: 6px; max-width: 420px; text-align: center; color: var(--muted); }
+figcaption strong { color: var(--ink); }
+.time { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: var(--rust); }
+.dl { font: 600 15px 'DM Sans', sans-serif; color: var(--cream); background: var(--teal); border: 0; border-radius: 999px; padding: 10px 20px; cursor: pointer; margin-top: 8px; }
+figcaption a { font-size: 14px; color: var(--teal); }
+.single { display: inline-block; padding: 24px; background: transparent; }
